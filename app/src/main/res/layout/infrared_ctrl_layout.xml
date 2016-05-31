@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/id_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClicked"
+            android:src="@mipmap/addscene_type4"
+            android:text="电视遥控">
+        </com.gta.smart.smarthome.ImageButtonWithText>
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/id_ari_conditioner"
+            android:onClick="onClicked"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/addscene_type6"
+            android:text="空调遥控">
+        </com.gta.smart.smarthome.ImageButtonWithText>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:columnCount="3">
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/camera_sys_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="摄像头"
+            android:src="@drawable/e">
+        </com.gta.smart.smarthome.ImageButtonWithText>
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/setting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="设置"
+            android:src="@drawable/f">
+        </com.gta.smart.smarthome.ImageButtonWithText>
+    </GridLayout>
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SmartHome</string>
+    <string name="action_settings">Settings</string>
+    <string name="smart_ctrl">智能家电控制</string>
+    <string name="infrared_ctrl">红外控制</string>
+    <string name="tv_ctrl">电视遥控</string>
+    <string name="tv_open">机顶盒开关</string>
+    <string name="tv_open2">电视开关</string>
+</resources>

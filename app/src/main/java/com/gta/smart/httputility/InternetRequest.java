@@ -23,6 +23,9 @@ public class InternetRequest {
         public String username;
     }
 
+    /**
+     * 异步处理获取AccessToken和UserID
+     */
     public class RequestUserID extends AsyncTask<String, Void, String> {
         @Override
         protected void onPreExecute() {

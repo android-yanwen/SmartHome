@@ -27,6 +27,7 @@ public class InfraredCtrl extends AppCompatActivity {
         tag = getPackageName();
         ActionBar actionBar = InfraredCtrl.this.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
     }
 
     public void onClicked(View view) {
@@ -48,11 +49,6 @@ public class InfraredCtrl extends AppCompatActivity {
 //    }
     @Override
     protected void onResume() {
-        InternetRequest internetRequest = new InternetRequest(InfraredCtrl.this);
-        InternetRequest.RequestParamsBean bean = internetRequest.new RequestParamsBean();
-        bean.username = "13040872678";
-        String params = new Gson().toJson(bean);
-        internetRequest.new RequestUserID().execute(params);
         super.onResume();
     }
 

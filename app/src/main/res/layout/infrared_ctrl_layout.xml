@@ -3,26 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true">
-        <com.gta.smart.smarthome.ImageButtonWithText
-            android:id="@+id/id_tv"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/smart_on_of_relativelayout"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:longClickable="true"
+            android:background="@drawable/item_selector" >
+            <ImageView
+                android:id="@+id/icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:id="@+id/on_off_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:layout_toRightOf="@id/icon_iv"
+                android:text="@string/smart_on_off"/>
+            <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/smart_on_of_slide"
+                android:layout_width="@dimen/dimen_width_60"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClicked"
-            android:src="@mipmap/addscene_type4"
-            android:text="电视遥控">
-        </com.gta.smart.smarthome.ImageButtonWithText>
-        <com.gta.smart.smarthome.ImageButtonWithText
-            android:id="@+id/id_ari_conditioner"
-            android:onClick="onClicked"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/addscene_type6"
-            android:text="空调遥控">
-        </com.gta.smart.smarthome.ImageButtonWithText>
+            android:layout_centerHorizontal="true">
+            <com.gta.smart.smarthome.ImageButtonWithText
+                android:id="@+id/id_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/addscene_type4"
+                android:onClick="onClicked"
+                android:text="电视遥控">
+            </com.gta.smart.smarthome.ImageButtonWithText>
+            <com.gta.smart.smarthome.ImageButtonWithText
+                android:id="@+id/id_ari_conditioner"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/addscene_type6"
+                android:onClick="onClicked"
+                android:text="空调遥控">
+            </com.gta.smart.smarthome.ImageButtonWithText>
+        </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

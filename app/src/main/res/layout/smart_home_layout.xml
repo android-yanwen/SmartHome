@@ -60,7 +60,7 @@
                 android:textSize="25sp"
                 android:text="LED灯带"/>
             <com.gta.smart.slideswitch.SlideSwitch
-                android:layout_width="60dp"
+                android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"/>
@@ -87,7 +87,7 @@
                 android:textSize="25sp"
                 android:text="加湿器"/>
             <com.gta.smart.slideswitch.SlideSwitch
-                android:layout_width="60dp"
+                android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"/>
@@ -146,7 +146,7 @@
                 android:textSize="25sp"
                 android:text="嵌入式遥控开关"/>
             <com.gta.smart.slideswitch.SlideSwitch
-                android:layout_width="60dp"
+                android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"/>

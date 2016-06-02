@@ -27,7 +27,7 @@ public class InternetRequest {
     private static final String tag = "InternetRequest";
     public static String accessToken;
     public static String userId;
-    public static String[] kids;
+//    public static String[] kids;
 
     public InternetRequest(Context context) {
         this.context = context;
@@ -36,6 +36,9 @@ public class InternetRequest {
     public class RequestParamsBean {
         public String username;
         public String userid;
+        public String kid;
+        public String remoteType;
+        public String order;
     }
 
     /**
@@ -60,7 +63,7 @@ public class InternetRequest {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Log.i(tag, s);
-            try {
+            /*try {
                 JSONObject jsonObject = new JSONObject(s);
                 JSONArray jsonArray = jsonObject.getJSONArray("datalist");
                 kids = new String[jsonArray.length()];
@@ -70,7 +73,7 @@ public class InternetRequest {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
-            }
+            }*/
 //            mProgressDialog.dismiss();
             if (null != mOnAsyncTaskListener) {
                 mOnAsyncTaskListener.onTaskFinish(s);

@@ -21,6 +21,7 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
     private ImageButtonWithText securityBnt;
     private ImageButtonWithText sceneModelBnt;
     private ImageButtonWithText doorSysBnt;
+    private ImageButtonWithText bedroomBtn;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +34,10 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
         securityBnt.setOnClickListener(this);
         sceneModelBnt = (ImageButtonWithText) view.findViewById(R.id.scene_model_btn);
         sceneModelBnt.setOnClickListener(this);
+        doorSysBnt = (ImageButtonWithText) view.findViewById(R.id.door_sys_btn);
+        doorSysBnt.setOnClickListener(this);
+        bedroomBtn = (ImageButtonWithText) view.findViewById(R.id.bedroom_btn);
+        bedroomBtn.setOnClickListener(this);
         return view/*super.onCreateView(inflater, container, savedInstanceState)*/;
     }
 

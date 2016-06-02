@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -197,7 +198,8 @@ public class HttpUtility {
                     System.arraycopy(temp, 0, data, destPos, readLen);
                     destPos += readLen;
                 }
-                String result = new String(data, "UTF-8"); // 响应也是UTF-8编码
+                byte[] fixed_data = Arrays.copyOf(data, destPos);
+                String result = new String(fixed_data, "UTF-8"); // 响应也是UTF-8编码
 //                System.out.println(info + "服务器返回结果：" + result);
                 return result;
             }

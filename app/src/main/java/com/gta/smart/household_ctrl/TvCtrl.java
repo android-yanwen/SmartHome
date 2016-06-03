@@ -1,16 +1,20 @@
 package com.gta.smart.household_ctrl;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.google.gson.Gson;
 import com.gta.smart.httputility.HandlerResult;
@@ -27,12 +31,15 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
     private String tag;
     private ProgressDialog mProgressDialog;
     private HandlerResult handlerResult;
+    private RelativeLayout infrared_keyboard_layout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tv_ctrl_layout);
         context = TvCtrl.this;
-        tag = getPackageName();
+        tag = getLocalClassName();
+        ActionBar actionBar = TvCtrl.this.getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
         initView();
 //        ActionBar actionBar = getActionBar();
 
@@ -119,6 +126,26 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
             default:
                 break;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            this.finish();
+            overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     /**

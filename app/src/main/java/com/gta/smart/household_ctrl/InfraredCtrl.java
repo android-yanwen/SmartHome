@@ -37,7 +37,7 @@ public class InfraredCtrl extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infrared_ctrl_layout);
         context = this;
-        tag = getPackageName();
+        tag = getLocalClassName();
         ActionBar actionBar = InfraredCtrl.this.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         initView();
@@ -74,11 +74,12 @@ public class InfraredCtrl extends AppCompatActivity {
 
     public void onClicked(View view) {
         switch (view.getId()) {
-            case R.id.id_tv:
+            case R.id.tv_ctrl_layout:
                 Log.i(tag, "R.id.id_tv");
                 startActivity(new Intent(InfraredCtrl.this, TvCtrl.class));
+                InfraredCtrl.this.overridePendingTransition(R.anim.translate, R.anim.windowout);
                 break;
-            case R.id.id_ari_conditioner:
+            case R.id.air_ctrl_layout:
                 Log.i(tag, "R.id.id_ari_conditioner");
                 break;
             default:

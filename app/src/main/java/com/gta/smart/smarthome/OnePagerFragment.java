@@ -55,7 +55,8 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
                 break;
             case R.id.scene_model_btn:
                 break;
-            case R.id.door_sys_btn:
+            case R.id.door_sys_btn:  //门禁系统:
+
                 break;
             case R.id.bedroom_btn:
                 break;

@@ -7,4 +7,6 @@
     <string name="tv_open">机顶盒开关</string>
     <string name="tv_open2">电视开关</string>
     <string name="smart_on_off">智能开关</string>
+    <string name="tv_remote_ctrl">电视遥控</string>
+    <string name="air_condition_ctrl">空调遥控</string>
 </resources>

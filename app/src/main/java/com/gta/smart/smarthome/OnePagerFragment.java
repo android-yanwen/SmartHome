@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gta.smart.enviromental_monitoring.EviromentalMonitoring;
 import com.gta.smart.household_ctrl.HouseholdCtrl;
 
 /**
@@ -50,6 +51,7 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
 //                overridePendingTransition(R.anim.translate, R.anim.windowout);
                 break;
             case R.id.even_monitor_btn:
+                startActivity(new Intent(getActivity(), EviromentalMonitoring.class));
                 break;
             case R.id.security_btn:
                 break;

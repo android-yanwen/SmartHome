@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/household_ctrl_scrollv"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:scrollbarStyle="outsideOverlay"
     android:padding="0dp"
     android:background="#eee">
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/infrared_img"
                 android:layout_centerVertical="true"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="红外控制"/>
             <ImageView
                 android:layout_width="wrap_content"
@@ -46,7 +46,9 @@
             android:id="@+id/led_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/led_img"
                 android:layout_width="wrap_content"
@@ -57,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/led_img"
                 android:layout_centerVertical="true"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="LED灯带"/>
             <com.gta.smart.slideswitch.SlideSwitch
                 android:layout_width="@dimen/dimen_width_60"
@@ -73,7 +75,9 @@
             android:id="@+id/humidifier_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/humidifier_img"
                 android:layout_width="wrap_content"
@@ -84,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/humidifier_img"
                 android:layout_centerVertical="true"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="加湿器"/>
             <com.gta.smart.slideswitch.SlideSwitch
                 android:layout_width="@dimen/dimen_width_60"
@@ -98,7 +102,10 @@
             android:background="@color/colorSplit"/>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/on_off_iv"
                 android:layout_width="wrap_content"
@@ -109,21 +116,14 @@
                 android:id="@+id/on_off_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
                 android:text="一体式遥控开关"/>
-            <SeekBar
-                android:layout_toRightOf="@id/on_off_iv"
-                android:id="@+id/seek_bar"
-                android:layout_below="@id/on_off_tv"
-                android:layout_width="200dp"
+            <com.gta.smart.slideswitch.SlideSwitch
+                android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="wrap_content"
-                android:maxHeight="20dp"
-                android:minHeight="20dp"
-                android:paddingLeft="20dp"
-                android:paddingEnd="20dp"
-                android:max="100"
-                android:progressDrawable="@drawable/seekbar_define_color_style"
-                android:thumb="@drawable/seekbar_thumb"/>
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
         </RelativeLayout>
         <View
             android:layout_width="match_parent"
@@ -132,7 +132,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/switch_iv"
                 android:layout_width="wrap_content"
@@ -143,13 +145,108 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="嵌入式遥控开关"/>
             <com.gta.smart.slideswitch.SlideSwitch
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSplit"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
+            <ImageView
+                android:id="@+id/corridor_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:layout_toRightOf="@id/corridor_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:text="走廊灯"/>
+            <com.gta.smart.slideswitch.SlideSwitch
+                android:layout_width="@dimen/dimen_width_60"
+                android:layout_height="0dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSplit"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
+            <ImageView
+                android:id="@+id/adjust_led_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:layout_toRightOf="@id/adjust_led_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:text="可调灯"/>
+            <SeekBar
+                android:layout_width="@dimen/dimen_seek_bar_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:progressDrawable="@drawable/seekbar_define_color_style"
+                android:thumb="@drawable/seekbar_thumb"/>
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSplit"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true"
+            android:background="@drawable/item_selector">
+            <ImageView
+                android:id="@+id/electic_drape_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:id="@+id/electric_drape_tv"
+                android:layout_toRightOf="@id/electic_drape_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="20sp"
+                android:text="电动窗帘"/>
+            <SeekBar
+                android:id="@+id/electric_drape_bar"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/dimen_seek_bar_width"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:max="100"
+                android:progressDrawable="@drawable/seekbar_define_color_style"
+                android:thumb="@drawable/seekbar_thumb"/>
         </RelativeLayout>
         <View
             android:layout_width="match_parent"

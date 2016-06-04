@@ -30,6 +30,9 @@
         <activity
             android:label="@string/tv_ctrl"
             android:name="com.gta.smart.household_ctrl.TvCtrl" />
+        <activity
+            android:label="@string/envir_monitor"
+            android:name="com.gta.smart.enviromental_monitoring.EviromentalMonitoring" />
     </application>
 
 </manifest>

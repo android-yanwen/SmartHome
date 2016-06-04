@@ -34,6 +34,10 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSplit"/>
         <RelativeLayout
             android:id="@+id/tv_ctrl_layout"
             android:layout_width="match_parent"
@@ -62,6 +66,10 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/mm_submenu_normal"/>
         </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSplit"/>
         <RelativeLayout
             android:id="@+id/air_ctrl_layout"
             android:layout_width="match_parent"

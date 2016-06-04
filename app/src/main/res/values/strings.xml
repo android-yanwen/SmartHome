@@ -9,4 +9,9 @@
     <string name="smart_on_off">智能开关</string>
     <string name="tv_remote_ctrl">电视遥控</string>
     <string name="air_condition_ctrl">空调遥控</string>
+    <string name="envir_monitor">环境监控</string>
+
+
+    <string name="temperature">温度：</string>
+    <string name="humidity">湿度：</string>
 </resources>

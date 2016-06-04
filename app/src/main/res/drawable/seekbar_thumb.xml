@@ -7,7 +7,7 @@
     &lt;!&ndash; 普通无焦点状态 -拖动按钮&ndash;&gt;-->
     <item
         android:state_pressed="false"
-        android:drawable="@drawable/mm_submenu_normal" />
+        android:drawable="@drawable/thume_icon_32" />
     <!-- 有焦点状态-->
 <!--    <item
         android:state_focused="true"

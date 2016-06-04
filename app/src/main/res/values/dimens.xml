@@ -6,4 +6,5 @@
     <dimen name="dimen_size_25">25dp</dimen>
     <dimen name="dimen_size_50">50dp</dimen>
     <dimen name="dimen_width_60">60dp</dimen>
+    <dimen name="dimen_seek_bar_width">200dp</dimen>
 </resources>

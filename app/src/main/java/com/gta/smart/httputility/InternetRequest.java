@@ -37,6 +37,7 @@ public class InternetRequest {
         public String username;
         public String userid;
         public String kid;
+        public String key;
         public String remoteType;
         public String order;
     }

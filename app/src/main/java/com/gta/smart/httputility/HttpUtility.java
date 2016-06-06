@@ -164,6 +164,8 @@ public class HttpUtility {
             connection.setDoOutput(true);
             connection.setDoInput(true);
             connection.setUseCaches(false);
+            connection.setConnectTimeout(8000);
+            connection.setReadTimeout(8000);
             connection.setInstanceFollowRedirects(true);
             connection.setRequestMethod("POST"); // 设置请求方式
             connection.setRequestProperty("Accept", "application/json"); // 设置接收数据的格式

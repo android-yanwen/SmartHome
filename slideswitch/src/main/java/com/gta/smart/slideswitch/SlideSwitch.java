@@ -21,6 +21,8 @@ public class SlideSwitch extends View{
     float lineEnd; //直线段结束的位置（纵坐标
     float lineWidth;
     final int SCALE = 4; // 控件长度为滑动的圆的半径的倍数
+    public static final String ON = "On";
+    public static final String OFF = "Off";
     OnStateChangedListener onStateChangedListener;
 
     public SlideSwitch(Context context, AttributeSet attrs, int defStyle) {
@@ -131,4 +133,35 @@ public class SlideSwitch extends View{
         public void onStateChanged(boolean state);
     }
 
+    /**
+     * 设置SlideSwitch on or off
+     * @param isOn
+     */
+    public void setOnOrOff(String isOn) {
+        if(null != onStateChangedListener)
+        {
+            if (isOn.equals(ON)) {
+                curX = lineEnd;
+                onStateChangedListener.onStateChanged(true);
+                this.isOn = true;
+            } else if (OFF.equals(isOn)) {
+                curX = lineStart;
+                onStateChangedListener.onStateChanged(false);
+                this.isOn = false;
+            }
+            /*通过刷新调用onDraw*/
+            this.postInvalidate();
+        }
+    }
+
+    /**
+     * 判断SlideSwitch的当前开关状态
+     * @return
+     */
+    public boolean isOpen() {
+        if (curX == lineStart) {
+            return false;
+        }
+        return true;
+    }
 }

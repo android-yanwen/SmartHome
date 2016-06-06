@@ -1,20 +1,30 @@
 package com.gta.smart.smarthome;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.GridLayout;
 import android.widget.GridView;
+import android.widget.ImageButton;
 
 import com.gta.smart.household_ctrl.HouseholdCtrl;
 import com.gta.smart.household_ctrl.ViewPageAdapter;
@@ -22,19 +32,18 @@ import com.gta.smart.household_ctrl.ViewPageAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Context context;
     ViewPager mian_viewpager;
     List<View> views = new ArrayList<>();
     private String tag;
+    private ImageButton setting_imgbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        tag = getPackageName();
+        setContentView(R.layout.drawlayout_main);
+        tag = getLocalClassName();
         context = this;
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +53,12 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+        initView();
+    }
 
+    private void initView() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         mian_viewpager = (ViewPager) findViewById(R.id.mian_viewpager);
         views.add(getLayoutInflater().inflate(R.layout.view_pager_layout_1, null));
         views.add(getLayoutInflater().inflate(R.layout.view_pager_layout_2, null));
@@ -65,8 +79,37 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(tag, "state:" + state);
             }
         });
+
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this,
+                drawerLayout,
+                toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close
+        );
+        toggle.syncState();
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        setting_imgbtn = (ImageButton) findViewById(R.id.setting_imgbtn);
     }
 
+    public void onClicked(View view) {
+        switch (view.getId()) {
+            case R.id.setting_imgbtn:
+                Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
+                setting_imgbtn.startAnimation(animation);
+                break;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
+        setting_imgbtn.startAnimation(animation);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -91,5 +134,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+//        Log.i(tag, "onNatigationTtemSelected() onClicked");
+        switch (item.getItemId()) {
+            case R.id.nav_send:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setIcon(android.R.drawable.alert_light_frame);
+                builder.setTitle("警告");
+                builder.setMessage("确定退出应用程序？");
+                builder.setCancelable(false);
+                builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                builder.setPositiveButton("No", null);
+                builder.show();
+                break;
+        }
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

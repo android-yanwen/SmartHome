@@ -87,7 +87,6 @@ public class HandlerResult {
         }
         return kid;
     }
-
     /**
      * 获取remoteType
      * @return
@@ -129,5 +128,22 @@ public class HandlerResult {
             }
         }
         return order;
+    }
+
+    /**
+     * 获得小K的开关状态
+     * @param result
+     * @return
+     */
+    public static String getSmallKStatus(String result) {
+        String status = "close";
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(result);
+            status = jsonObject.getString("data");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return status;
     }
 }

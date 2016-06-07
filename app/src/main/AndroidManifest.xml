@@ -33,6 +33,9 @@
         <activity
             android:label="@string/envir_monitor"
             android:name="com.gta.smart.enviromental_monitoring.EviromentalMonitoring" />
+        <activity
+            android:label="@string/intelligent_safety"
+            android:name="com.gta.smart.intelligentsafety.IntelligentSafetyClass"/>
     </application>
 
 </manifest>

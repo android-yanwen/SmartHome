@@ -7,4 +7,7 @@
     <color name="colorSplit">#EED5B7</color>
     <color name="colorOrange">#FF6600</color>
     <color name="colorLine">#000033</color>
+    <color name="colorSplitTrans">#88EED5B7</color>
+    <color name="colorTranslate">#88ffffff</color>
+    <color name="colorBlueTrans">#881C86EE</color>
 </resources>

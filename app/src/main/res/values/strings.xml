@@ -15,8 +15,15 @@
     <string name="envir_monitor">环境监控</string>
 
     <string name="intelligent_safety">智能安防</string>
+    <string name="scene_model">情景模式</string>
+    <string name="setting">设置</string>
+    <string name="personal_setting">个人信息设置</string>
 
 
     <string name="temperature">温度：</string>
     <string name="humidity">湿度：</string>
+    <string name="leave_home_model">离家模式</string>
+    <string name="back_home_model">回家模式</string>
+    <string name="sleep_model">睡眠模式</string>
+    <string name="get_up_model">起床模式</string>
 </resources>

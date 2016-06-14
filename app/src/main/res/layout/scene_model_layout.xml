@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.handmark.pulltorefresh.library.PullToRefreshScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    ptr:ptrMode="both">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/id_leave_home_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/default_scene4"
+            android:text="@string/leave_home_model"/>
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/id_leave_home_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/default_scene4"
+            android:layout_below="@id/id_leave_home_btn"
+            android:text="@string/back_home_model"/>
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/id_leave_home_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_leave_home_btn1"
+            android:src="@drawable/default_scene4"
+            android:text="@string/sleep_model"/>
+        <com.gta.smart.smarthome.ImageButtonWithText
+            android:id="@+id/id_leave_home_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_leave_home_btn2"
+            android:src="@drawable/default_scene4"
+            android:text="@string/get_up_model"/>
+    </RelativeLayout>
+</com.handmark.pulltorefresh.library.PullToRefreshScrollView>

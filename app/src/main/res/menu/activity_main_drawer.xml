@@ -3,19 +3,28 @@
     <!--android:checkableBehavior="single"-->
     <group >
         <item
-            android:id="@+id/nav_camera"
-            android:title="Import" />
+            android:id="@+id/nav_devices"
+            android:title="设备列表" />
         <item
-            android:id="@+id/nav_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_clean_robot"
+            android:title="扫地机器人" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_family_services_robot"
+            android:title="家庭服务机器人" />
         <item
-            android:id="@+id/nav_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_help"
+            android:title="帮助" />
+        <item
+            android:id="@+id/nav_share"
+            android:title="设置" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="关于" />
+        <item
+            android:id="@+id/nav_send"
+            android:title="退出" />
     </group>
-    <item android:title="Communicate">
+<!--    <item android:title="Communicate">
         <menu >
             <item
                 android:id="@+id/nav_share"
@@ -24,6 +33,6 @@
                 android:id="@+id/nav_send"
                 android:title="退出" />
         </menu>
-    </item>
+    </item>-->
 
 </menu>

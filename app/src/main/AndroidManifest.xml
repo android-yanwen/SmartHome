@@ -11,16 +11,19 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.gta.smart.entrywindow.EntryAppWindow"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.gta.smart.entrywindow.LoadingWin"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:label="@string/smart_ctrl"
             android:name="com.gta.smart.household_ctrl.HouseholdCtrl"/>
@@ -36,6 +39,15 @@
         <activity
             android:label="@string/intelligent_safety"
             android:name="com.gta.smart.intelligentsafety.IntelligentSafetyClass"/>
+        <activity
+            android:label="@string/intelligent_safety"
+            android:name="com.gta.smart.scenemodel.SceneModelClass"/>
+        <activity
+            android:label="@string/setting"
+            android:name="com.gta.smart.smarthome.SettingClass"/>
+        <activity
+            android:label="@string/personal_setting"
+            android:name="com.gta.smart.smarthome.PersonalInfoSettingClass"/>
     </application>
 
 </manifest>

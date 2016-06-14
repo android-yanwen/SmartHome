@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.gta.smart.enviromental_monitoring.EviromentalMonitoring;
 import com.gta.smart.household_ctrl.HouseholdCtrl;
 import com.gta.smart.intelligentsafety.IntelligentSafetyClass;
+import com.gta.smart.scenemodel.SceneModelClass;
 
 /**
  * Created by Administrator on 2016/5/27.
@@ -58,6 +59,7 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
                 startActivity(new Intent(getActivity(), IntelligentSafetyClass.class));
                 break;
             case R.id.scene_model_btn:
+                startActivity(new Intent(getActivity(), SceneModelClass.class));
                 break;
             case R.id.door_sys_btn:  //门禁系统:
 

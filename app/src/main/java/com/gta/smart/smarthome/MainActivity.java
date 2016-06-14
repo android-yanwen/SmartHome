@@ -20,12 +20,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.ImageButton;
 
+import com.gta.smart.entrywindow.LoadingWin;
 import com.gta.smart.household_ctrl.HouseholdCtrl;
 import com.gta.smart.household_ctrl.ViewPageAdapter;
 
@@ -80,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,
@@ -98,8 +99,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onClicked(View view) {
         switch (view.getId()) {
             case R.id.setting_imgbtn:
+                // 为控件添加旋转动画
                 Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
                 setting_imgbtn.startAnimation(animation);
+                startActivity(new Intent(this, SettingClass.class));
+                overridePendingTransition(R.anim.translate, R.anim.windowout);
+                break;
+            case R.id.imageView:
+                startActivity(new Intent(context, LoadingWin.class));
+                finish();
                 break;
         }
     }

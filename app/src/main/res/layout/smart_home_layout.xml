@@ -22,7 +22,7 @@
                 android:id="@+id/infrared_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@mipmap/icon_infrared"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,6 +62,7 @@
                 android:textSize="20sp"
                 android:text="LED灯带"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_leds_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
@@ -91,6 +92,7 @@
                 android:textSize="20sp"
                 android:text="加湿器"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_humidifier_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
@@ -158,6 +160,7 @@
             android:layout_height="1dp"
             android:background="@color/colorSplit"/>
         <RelativeLayout
+            android:id="@+id/corridor_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -176,6 +179,7 @@
                 android:textSize="20sp"
                 android:text="走廊灯"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_corridor_led_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"

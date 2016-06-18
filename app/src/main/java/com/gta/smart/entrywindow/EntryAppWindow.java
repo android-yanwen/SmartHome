@@ -67,6 +67,7 @@ public class EntryAppWindow extends AppCompatActivity {
             }
         });
 
+	／／ 已经弃用
 //        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
 //        winWidth = manager.getDefaultDisplay().getWidth();
         DisplayMetrics dm = getResources().getDisplayMetrics();

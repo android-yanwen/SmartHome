@@ -3,6 +3,9 @@
     package="com.gta.smart.smarthome">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,6 +25,8 @@
 
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".SelectPicPopupWindow"
+            android:theme="@style/MyDialogStyleButtom"/>
         <activity android:name="com.gta.smart.entrywindow.LoadingWin"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
@@ -42,6 +47,9 @@
         <activity
             android:label="@string/intelligent_safety"
             android:name="com.gta.smart.scenemodel.SceneModelClass"/>
+        <activity
+            android:label="@string/bedroom_activity"
+            android:name="com.gta.smart.bedroom.BedroomClass" />
         <activity
             android:label="@string/setting"
             android:name="com.gta.smart.smarthome.SettingClass"/>

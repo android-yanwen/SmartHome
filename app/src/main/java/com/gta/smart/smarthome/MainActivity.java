@@ -36,10 +36,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Context context;
+    private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     ViewPager mian_viewpager;
     List<View> views = new ArrayList<>();
     private String tag;
     private ImageButton setting_imgbtn;
+    private ImageButtonWithText user_head_portrait_img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +96,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         setting_imgbtn = (ImageButton) findViewById(R.id.setting_imgbtn);
+        user_head_portrait_img = (ImageButtonWithText) findViewById(R.id.user_head_portrait_img);
+        // 长按更改用户头像
+        user_head_portrait_img.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Log.i(tag, "onLongClick()");
+                startActivityForResult(new Intent(context, SelectPicPopupWindow.class), GET_USER_HEAD_PORTRAIT_CODE);
+                return true;
+            }
+        });
     }
 
     public void onClicked(View view) {
@@ -108,6 +120,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.imageView:
                 startActivity(new Intent(context, LoadingWin.class));
                 finish();
+                break;
+            case R.id.user_head_portrait_img:
+
                 break;
         }
     }
@@ -165,5 +180,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case GET_USER_HEAD_PORTRAIT_CODE:
+                if (resultCode == RESULT_OK) {
+//                    UserHeadPortait userHeadPortait = data.getParcelableExtra("UserHeadPortrait");
+                    UserHeadPortait userHeadPortait = data.getExtras().getParcelable("UserHeadPortrait");
+                    user_head_portrait_img.setBackgroundBitmap(userHeadPortait.userIcon);
+                }
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

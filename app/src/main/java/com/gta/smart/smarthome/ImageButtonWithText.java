@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -80,14 +81,15 @@ public class ImageButtonWithText extends RelativeLayout {
 //        imageButton.setImageResource(drawable);
 //    }
 //
-//    public void setBackgroundResource(int resource) {
+    public void setBackgroundBitmap(/*int resource*/Bitmap bm) {
 //        imageButton.setBackgroundResource(resource);
-//    }
+        imageButton.setImageBitmap(bm);
+    }
 //
 //
-//    public void setTextViewText(String text) {
-//        textView.setText(text);
-//    }
+    public void setTextViewText(String text) {
+        textView.setText(text);
+    }
 //    public void setTextColor(int color) {
 //        textView.setTextColor(color);
 //    }

@@ -103,6 +103,7 @@
             android:layout_height="1dp"
             android:background="@color/colorSplit"/>
         <RelativeLayout
+            android:id="@+id/overall_remote_ctrl_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -122,6 +123,7 @@
                 android:textSize="20sp"
                 android:text="一体式遥控开关"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_overal_remote_ctrl_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -132,6 +134,7 @@
             android:layout_height="1dp"
             android:background="@color/colorSplit"/>
         <RelativeLayout
+            android:id="@+id/embedded_remote_ctrl_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -150,6 +153,7 @@
                 android:textSize="20sp"
                 android:text="嵌入式遥控开关"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_embedded_remote_ctrl_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"

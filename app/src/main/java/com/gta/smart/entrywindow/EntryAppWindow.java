@@ -67,7 +67,7 @@ public class EntryAppWindow extends AppCompatActivity {
             }
         });
 
-	／／ 已经弃用
+	// 已经弃用
 //        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
 //        winWidth = manager.getDefaultDisplay().getWidth();
         DisplayMetrics dm = getResources().getDisplayMetrics();
@@ -82,7 +82,7 @@ public class EntryAppWindow extends AppCompatActivity {
         ((ViewGroup.LayoutParams) localObject).width = width;
         background_img.setLayoutParams((ViewGroup.LayoutParams) localObject);
         localObject = new TranslateAnimation(0F, winWidth - width, 0F, 0f);
-        ((TranslateAnimation) localObject).setDuration(20000l);
+        ((TranslateAnimation) localObject).setDuration(10000l);
         ((TranslateAnimation) localObject).setFillAfter(true);
         background_img.setAnimation((TranslateAnimation) localObject);
         ((TranslateAnimation) localObject).startNow();

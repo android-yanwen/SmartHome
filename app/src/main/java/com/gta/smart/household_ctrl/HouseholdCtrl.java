@@ -24,12 +24,13 @@ import com.gta.smart.smarthome.R;
  * Created by Administrator on 2016/5/25.
  */
 public class HouseholdCtrl extends AppCompatActivity implements View.OnClickListener {
-    private RelativeLayout infrared_ly, led_ly, humidifier_ly, corridor_ly;
+    private RelativeLayout infrared_ly, led_ly, humidifier_ly, corridor_ly, overal_remote_ctrl_ly, embedded_remote_ctrl_ly;
     private ProgressDialog mProgressDialog ;
     private Context context;
     private String tag;
     private SlideSwitch id_humidifier_slide;
     private SlideSwitch id_leds_slide, id_corridor_led_slide;
+    private SlideSwitch id_overall_remote_ctrl_slide, id_embedded_remote_ctrl_slide;
     private Handler myHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -109,6 +110,20 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
                     id_corridor_led_slide.setOnOrOff(SlideSwitch.ON);
                 }
                 break;
+            case R.id.overall_remote_ctrl_ly:
+                if (id_overall_remote_ctrl_slide.isOpen()) {
+                    id_overall_remote_ctrl_slide.setOnOrOff(SlideSwitch.OFF);
+                } else {
+                    id_overall_remote_ctrl_slide.setOnOrOff(SlideSwitch.ON);
+                }
+                break;
+            case R.id.embedded_remote_ctrl_ly:
+                if (id_embedded_remote_ctrl_slide.isOpen()) {
+                    id_embedded_remote_ctrl_slide.setOnOrOff(SlideSwitch.OFF);
+                } else {
+                    id_embedded_remote_ctrl_slide.setOnOrOff(SlideSwitch.ON);
+                }
+                break;
         }
 
     }
@@ -155,6 +170,24 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
         });
         id_corridor_led_slide = (SlideSwitch) findViewById(R.id.id_corridor_led_slide);
         id_corridor_led_slide.setOnStateChangedListener(new SlideSwitch.OnStateChangedListener() {
+            @Override
+            public void onStateChanged(boolean state) {
+
+            }
+        });
+        overal_remote_ctrl_ly = (RelativeLayout) findViewById(R.id.overall_remote_ctrl_ly);
+        overal_remote_ctrl_ly.setOnClickListener(this);
+        embedded_remote_ctrl_ly = (RelativeLayout) findViewById(R.id.embedded_remote_ctrl_ly);
+        embedded_remote_ctrl_ly.setOnClickListener(this);
+        id_overall_remote_ctrl_slide = (SlideSwitch) findViewById(R.id.id_overal_remote_ctrl_slide);
+        id_overall_remote_ctrl_slide.setOnStateChangedListener(new SlideSwitch.OnStateChangedListener() {
+            @Override
+            public void onStateChanged(boolean state) {
+
+            }
+        });
+        id_embedded_remote_ctrl_slide = (SlideSwitch) findViewById(R.id.id_embedded_remote_ctrl_slide);
+        id_embedded_remote_ctrl_slide.setOnStateChangedListener(new SlideSwitch.OnStateChangedListener() {
             @Override
             public void onStateChanged(boolean state) {
 

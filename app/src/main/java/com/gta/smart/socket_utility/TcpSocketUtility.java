@@ -15,7 +15,7 @@ public class TcpSocketUtility {
     private Socket mSocket = null;
     private InputStream inputStream;
     private OutputStream outputStream;
-    private static final String IP_ADDRESS = "10.1.37.10";
+    private static final String IP_ADDRESS = "10.1.37.45";
     private static final int PORT = 58007;
     private String tag = "TcpSocketUtility";
 //    private final ReentrantLock lock = new ReentrantLock(true);

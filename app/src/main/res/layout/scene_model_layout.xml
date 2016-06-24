@@ -6,26 +6,4 @@
     android:orientation="vertical"
     xmlns:ptr="http://schemas.android.com/apk/res-auto"
     ptr:ptrMode="both">
-
-    </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="开启你的智能生活"/>
-        <RelativeLayout
-            android:id="@+id/return_home_rl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:onClick="onClicked"
-            android:background="@drawable/item_selector">
-            <ImageView
-                android:id="@+id/return_home_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@mipmap/ic_launcher"/>
-        </RelativeLayout>
-    </LinearLayout>
 </com.handmark.pulltorefresh.library.PullToRefreshScrollView>

@@ -20,19 +20,26 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 /**
  * Created by Administrator on 2016/6/12.
  */
+<<<<<<< HEAD
 public class SceneModelClass extends AppCompatActivity implements View.OnClickListener{
+=======
+public class SceneModelClass extends AppCompatActivity {
+>>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
     private ImageButtonWithText id_leave_home_btn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scene_model_layout);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+<<<<<<< HEAD
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
+=======
+>>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
     }
 
     @Override
@@ -45,6 +52,7 @@ public class SceneModelClass extends AppCompatActivity implements View.OnClickLi
         return super.onOptionsItemSelected(item);
     }
 
+<<<<<<< HEAD
     public void onClicked(View view) {
     }
 
@@ -58,4 +66,6 @@ public class SceneModelClass extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
+=======
+>>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
 }

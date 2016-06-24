@@ -4,24 +4,31 @@
     <group >
         <item
             android:id="@+id/nav_devices"
+            android:icon="@mipmap/drawer_menu_icon"
             android:title="设备列表" />
         <item
             android:id="@+id/nav_clean_robot"
+            android:icon="@mipmap/drawer_robot1_icon"
             android:title="扫地机器人" />
         <item
             android:id="@+id/nav_family_services_robot"
+            android:icon="@mipmap/drawer_robot2_icon"
             android:title="家庭服务机器人" />
         <item
             android:id="@+id/nav_help"
+            android:icon="@mipmap/drawer_help_icon"
             android:title="帮助" />
         <item
             android:id="@+id/nav_share"
+            android:icon="@mipmap/drawer_setting_icon"
             android:title="设置" />
         <item
             android:id="@+id/nav_about"
+            android:icon="@mipmap/drawer_about_icon"
             android:title="关于" />
         <item
             android:id="@+id/nav_send"
+            android:icon="@mipmap/drawer_out_icon"
             android:title="退出" />
     </group>
 <!--    <item android:title="Communicate">

@@ -17,4 +17,25 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--设置弹出窗口的动画属性-->
+    <style name="AnimaButtom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_buttom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_buttom_out</item>
+    </style>
+    <style name="MyDialogStyleButtom" parent="android:Theme.Dialog">
+        <!--动画风格-->
+        <item name="android:windowAnimationStyle" >@style/AnimaButtom</item>
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮在上一个窗口表面-->
+        <item name="android:windowIsFloating">true</item>
+        <!--窗口是否设置半透明-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--去掉窗口标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--模糊效果-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 </resources>

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gta.smart.bedroom.BedroomClass;
 import com.gta.smart.enviromental_monitoring.EviromentalMonitoring;
 import com.gta.smart.household_ctrl.HouseholdCtrl;
 import com.gta.smart.intelligentsafety.IntelligentSafetyClass;
@@ -65,6 +66,7 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
 
                 break;
             case R.id.bedroom_btn:
+                startActivity(new Intent(getActivity(), BedroomClass.class));
                 break;
         }
     }

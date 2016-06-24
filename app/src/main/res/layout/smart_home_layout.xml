@@ -17,17 +17,18 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:background="@drawable/item_selector"
-            android:padding="10dp">
+            android:padding="5dp">
             <ImageView
                 android:id="@+id/infrared_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/icon_infrared"/>
+                android:src="@drawable/home_infrared_icon"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/infrared_img"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="红外控制"/>
             <ImageView
@@ -46,19 +47,20 @@
             android:id="@+id/led_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/led_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_ctrl_len_icon"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/led_img"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="LED灯带"/>
             <com.gta.smart.slideswitch.SlideSwitch
@@ -76,19 +78,20 @@
             android:id="@+id/humidifier_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/humidifier_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_humidifer_icon"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/humidifier_img"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="加湿器"/>
             <com.gta.smart.slideswitch.SlideSwitch
@@ -103,25 +106,28 @@
             android:layout_height="1dp"
             android:background="@color/colorSplit"/>
         <RelativeLayout
+            android:id="@+id/overall_remote_ctrl_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/on_off_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_on_off_icon"/>
             <TextView
                 android:layout_toRightOf="@id/on_off_iv"
                 android:id="@+id/on_off_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="一体式遥控开关"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_overal_remote_ctrl_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -132,24 +138,27 @@
             android:layout_height="1dp"
             android:background="@color/colorSplit"/>
         <RelativeLayout
+            android:id="@+id/embedded_remote_ctrl_ly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/switch_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_embedded_ctrl_icon"/>
             <TextView
                 android:layout_toRightOf="@id/switch_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="嵌入式遥控开关"/>
             <com.gta.smart.slideswitch.SlideSwitch
+                android:id="@+id/id_embedded_remote_ctrl_slide"
                 android:layout_width="@dimen/dimen_width_60"
                 android:layout_height="0dp"
                 android:layout_centerVertical="true"
@@ -170,12 +179,13 @@
                 android:id="@+id/corridor_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_corridor_icon"/>
             <TextView
                 android:layout_toRightOf="@id/corridor_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="走廊灯"/>
             <com.gta.smart.slideswitch.SlideSwitch
@@ -199,17 +209,18 @@
                 android:id="@+id/adjust_led_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_adjust_light_icon"/>
             <TextView
                 android:layout_toRightOf="@id/adjust_led_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="可调灯"/>
             <SeekBar
                 android:layout_width="@dimen/dimen_seek_bar_width"
-                android:layout_height="wrap_content"
+                android:layout_height="28dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:paddingLeft="20dp"
@@ -224,27 +235,28 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="5dp"
             android:clickable="true"
             android:background="@drawable/item_selector">
             <ImageView
                 android:id="@+id/electic_drape_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher"/>
+                android:src="@drawable/home_electric_drape_icon"/>
             <TextView
                 android:id="@+id/electric_drape_tv"
                 android:layout_toRightOf="@id/electic_drape_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
                 android:textSize="20sp"
                 android:text="电动窗帘"/>
             <SeekBar
                 android:id="@+id/electric_drape_bar"
                 android:layout_centerVertical="true"
                 android:layout_width="@dimen/dimen_seek_bar_width"
-                android:layout_height="wrap_content"
+                android:layout_height="28dp"
                 android:layout_alignParentRight="true"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"

@@ -11,49 +11,49 @@
                     android:id="@+id/homn_ctrl_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/dimen_main_act_layout_margin"
                     android:text="智能家电控制"
-                    android:src="@drawable/a">
+                    android:src="@drawable/main_smart_ctrl_icon">
                 </com.gta.smart.smarthome.ImageButtonWithText>
                 <com.gta.smart.smarthome.ImageButtonWithText
                     android:id="@+id/even_monitor_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/dimen_main_act_layout_margin"
                     android:text="智能环境检测"
-                    android:src="@drawable/b">
+                    android:src="@drawable/main_enviro_icon">
                 </com.gta.smart.smarthome.ImageButtonWithText>
                 <com.gta.smart.smarthome.ImageButtonWithText
                     android:id="@+id/security_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/dimen_main_act_layout_margin"
                     android:text="智能安防"
-                    android:src="@drawable/c">
+                    android:src="@drawable/main_smart_security_icon">
                 </com.gta.smart.smarthome.ImageButtonWithText>
                 <com.gta.smart.smarthome.ImageButtonWithText
                     android:id="@+id/scene_model_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/dimen_main_act_layout_margin"
                     android:text="情景模式"
-                    android:src="@drawable/d">
+                    android:src="@drawable/main_scene_icon">
                 </com.gta.smart.smarthome.ImageButtonWithText>
                 <com.gta.smart.smarthome.ImageButtonWithText
                     android:id="@+id/door_sys_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/dimen_main_act_layout_margin"
                     android:text="门禁系统"
-                    android:src="@drawable/e">
+                    android:src="@drawable/main_door_icon">
                 </com.gta.smart.smarthome.ImageButtonWithText>
                 <com.gta.smart.smarthome.ImageButtonWithText
                     android:id="@+id/bedroom_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="@dimen/dimen_main_act_layout_margin"
                     android:text="乐龄卧室"
-                    android:src="@drawable/f">
+                    android:src="@drawable/main_bedroom_icon">
                 </com.gta.smart.smarthome.ImageButtonWithText>
         </GridLayout>
 </RelativeLayout>

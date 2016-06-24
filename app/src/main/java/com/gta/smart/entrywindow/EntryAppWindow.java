@@ -63,10 +63,11 @@ public class EntryAppWindow extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(EntryAppWindow.this, LoadingWin.class));
-                finish();
+//                finish();
             }
         });
 
+<<<<<<< HEAD
 	//已经弃用
 //        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
 //        winWidth = getWindowManager().getDefaultDisplay().getWidth();
@@ -87,6 +88,11 @@ public class EntryAppWindow extends AppCompatActivity {
         ((TranslateAnimation) localObject).setFillAfter(true);
         background_img.setAnimation((TranslateAnimation) localObject);
         ((TranslateAnimation) localObject).startNow();
+=======
+	// 已经弃用
+//        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
+//        winWidth = manager.getDefaultDisplay().getWidth();
+>>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
 //        Log.i(tag, manager.getDefaultDisplay().getHeight() + "");
 //        Log.i(tag, bitmap.getWidth() + "");
 //        Log.i(tag, bitmap.getHeight() + "");
@@ -108,5 +114,26 @@ public class EntryAppWindow extends AppCompatActivity {
 //                }
 //            }
 //        }, 0, 100);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        winWidth = dm.widthPixels;  // 得到屏幕宽度像素
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(getResources(), R.drawable.login_bg, options);
+        int width = options.outWidth;
+        Log.i(tag, "width:" + width);
+        Log.i(tag, "winwidth:" + winWidth);
+        Object localObject = background_img.getLayoutParams();
+        ((ViewGroup.LayoutParams) localObject).width = width;
+        background_img.setLayoutParams((ViewGroup.LayoutParams) localObject);
+        localObject = new TranslateAnimation(0F, winWidth - width, 0F, 0f);
+        ((TranslateAnimation) localObject).setDuration(10000l);
+        ((TranslateAnimation) localObject).setFillAfter(true);
+        background_img.setAnimation((TranslateAnimation) localObject);
+        ((TranslateAnimation) localObject).startNow();
     }
 }

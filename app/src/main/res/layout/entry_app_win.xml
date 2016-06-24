@@ -4,6 +4,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<<<<<<< HEAD
+=======
+    <!--添加了ImageView作为移动的背景图!-->
+>>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
     <ImageView
         android:id="@+id/background_img"
         android:src="@drawable/login_bg"

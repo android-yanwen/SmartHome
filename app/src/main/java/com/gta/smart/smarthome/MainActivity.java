@@ -36,10 +36,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Context context;
+    private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     ViewPager mian_viewpager;
     List<View> views = new ArrayList<>();
     private String tag;
     private ImageButton setting_imgbtn;
+    private ImageButtonWithText user_head_portrait_img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         mian_viewpager = (ViewPager) findViewById(R.id.mian_viewpager);
         views.add(getLayoutInflater().inflate(R.layout.view_pager_layout_1, null));
-        views.add(getLayoutInflater().inflate(R.layout.view_pager_layout_2, null));
+//        views.add(getLayoutInflater().inflate(R.layout.view_pager_layout_2, null));
         ViewPageAdapter adapter = new ViewPageAdapter(views);
         mian_viewpager.setAdapter(adapter);
         mian_viewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -92,31 +94,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         );
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
-        setting_imgbtn = (ImageButton) findViewById(R.id.setting_imgbtn);
+//        setting_imgbtn = (ImageButton) findViewById(R.id.setting_imgbtn);
+//        user_head_portrait_img = (ImageButtonWithText) findViewById(R.id.user_head_portrait_img);
+//        // 长按更改用户头像
+//        user_head_portrait_img.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                Log.i(tag, "onLongClick()");
+//                startActivityForResult(new Intent(context, SelectPicPopupWindow.class), GET_USER_HEAD_PORTRAIT_CODE);
+//                return true;
+//            }
+//        });
+
     }
 
     public void onClicked(View view) {
         switch (view.getId()) {
-            case R.id.setting_imgbtn:
-                // 为控件添加旋转动画
-                Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
-                setting_imgbtn.startAnimation(animation);
-                startActivity(new Intent(this, SettingClass.class));
-                overridePendingTransition(R.anim.translate, R.anim.windowout);
-                break;
+//            case R.id.setting_imgbtn:
+//                // 为控件添加旋转动画
+////                Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
+////                setting_imgbtn.startAnimation(animation);
+//                startActivity(new Intent(this, SettingClass.class));
+//                overridePendingTransition(R.anim.translate, R.anim.windowout);
+//                break;
             case R.id.imageView:
                 startActivity(new Intent(context, LoadingWin.class));
                 finish();
                 break;
+//            case R.id.user_head_portrait_img:
+//
+//                break;
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
-        setting_imgbtn.startAnimation(animation);
+//        Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
+//        setting_imgbtn.startAnimation(animation);
     }
 
     @Override
@@ -135,6 +152,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingClass.class));
+            overridePendingTransition(R.anim.translate, R.anim.windowout);
             return true;
         }
 
@@ -165,5 +184,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case GET_USER_HEAD_PORTRAIT_CODE:
+                if (resultCode == RESULT_OK) {
+//                    UserHeadPortait userHeadPortait = data.getParcelableExtra("UserHeadPortrait");
+                    UserHeadPortait userHeadPortait = data.getExtras().getParcelable("UserHeadPortrait");
+                    user_head_portrait_img.setBackgroundBitmap(userHeadPortait.userIcon);
+                }
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

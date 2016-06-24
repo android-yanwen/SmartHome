@@ -6,73 +6,9 @@
     android:orientation="vertical"
     xmlns:ptr="http://schemas.android.com/apk/res-auto"
     ptr:ptrMode="both">
-<<<<<<< HEAD
 
-=======
->>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-<<<<<<< HEAD
-        <RelativeLayout
-            android:id="@+id/scene_return_home_rl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClicked"
-            android:clickable="true">
-            <ImageView
-                android:id="@+id/scene_return_home_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/scene_return_home_img"
-                android:text="离家模式"/>
-            <Button
-                android:id="@+id/scene_return_home_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:text="应用"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/scene_leave_home_rl"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:onClick="onClicked"
-            android:clickable="true">
-            <ImageView
-                android:id="@+id/scene_leave_home_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/scene_leave_home_img"
-                android:text="离家模式"/>
-            <Button
-                android:id="@+id/scene_leave_home_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:text="应用"/>
-        </RelativeLayout>
     </LinearLayout>
 
-=======
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,5 +28,4 @@
                 android:background="@mipmap/ic_launcher"/>
         </RelativeLayout>
     </LinearLayout>
->>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
 </com.handmark.pulltorefresh.library.PullToRefreshScrollView>

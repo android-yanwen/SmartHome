@@ -67,7 +67,6 @@ public class EntryAppWindow extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
 	//已经弃用
 //        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
 //        winWidth = getWindowManager().getDefaultDisplay().getWidth();
@@ -88,11 +87,9 @@ public class EntryAppWindow extends AppCompatActivity {
         ((TranslateAnimation) localObject).setFillAfter(true);
         background_img.setAnimation((TranslateAnimation) localObject);
         ((TranslateAnimation) localObject).startNow();
-=======
 	// 已经弃用
 //        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
 //        winWidth = manager.getDefaultDisplay().getWidth();
->>>>>>> 88b2e8ee06048ae2a1c5ae91357888376b893436
 //        Log.i(tag, manager.getDefaultDisplay().getHeight() + "");
 //        Log.i(tag, bitmap.getWidth() + "");
 //        Log.i(tag, bitmap.getHeight() + "");

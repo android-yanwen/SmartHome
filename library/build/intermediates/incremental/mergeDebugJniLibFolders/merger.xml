@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\AndroidStu\SmartHome\library\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\AndroidStu\SmartHome\library\build-types\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/yanwen/AndroidStudioProjects/SmartHome/library/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/yanwen/AndroidStudioProjects/SmartHome/library/build-types/debug/jniLibs"/></dataSet></merger>

@@ -1,18 +1,26 @@
 [
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/layout/pull_to_refresh_header_vertical.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/layout/pull_to_refresh_header_vertical.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_vertical.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_vertical.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\pull_to_refresh_header_horizontal.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\layout\\pull_to_refresh_header_horizontal.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/layout/pull_to_refresh_header_horizontal.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/layout/pull_to_refresh_header_horizontal.xml"
     }
 ]

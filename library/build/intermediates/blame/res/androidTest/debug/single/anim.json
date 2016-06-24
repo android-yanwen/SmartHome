@@ -1,34 +1,50 @@
 [
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/anim/slide_in_from_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/anim/slide_in_from_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/anim/slide_out_to_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/anim/slide_out_to_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/anim/slide_out_to_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/anim/slide_out_to_top.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/anim/slide_in_from_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/anim/slide_in_from_top.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
     }
 ]

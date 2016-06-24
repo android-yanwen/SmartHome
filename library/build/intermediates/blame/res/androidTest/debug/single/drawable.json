@@ -1,18 +1,26 @@
 [
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/drawable/indicator_bg_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
-        "source": "E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
-        "source": "E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\SmartHome\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/res/merged/androidTest/debug/drawable/indicator_bg_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/library/build/intermediates/bundles/debug/res/drawable/indicator_bg_top.xml"
+    },
+    {
+        "merged": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "/Users/yanwen/AndroidStudioProjects/SmartHome/E:\\AndroidStu\\PullToRefreshScrollView\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     }
 ]

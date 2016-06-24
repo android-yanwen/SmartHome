@@ -67,15 +67,16 @@ public class EntryAppWindow extends AppCompatActivity {
             }
         });
 
-	／／ 已经弃用
+	//已经弃用
 //        WindowManager manager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
-//        winWidth = manager.getDefaultDisplay().getWidth();
+//        winWidth = getWindowManager().getDefaultDisplay().getWidth();
         DisplayMetrics dm = getResources().getDisplayMetrics();
         winWidth = dm.widthPixels;  // 得到屏幕宽度像素
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(getResources(), R.drawable.login_bg, options);
         int width = options.outWidth;
+//        int width = BitmapFactory.decodeResource(getResources(), R.drawable.login_bg).getWidth()/2;
         Log.i(tag, "width:" + width);
         Log.i(tag, "winwidth:" + winWidth);
         Object localObject = background_img.getLayoutParams();

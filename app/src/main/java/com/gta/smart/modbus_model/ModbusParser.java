@@ -2,6 +2,8 @@ package com.gta.smart.modbus_model;
 
 import android.util.Log;
 
+import com.gta.smart.utility.Utility;
+
 /**
  * Created by Administrator on 2016/6/15.
  */
@@ -13,7 +15,7 @@ public class ModbusParser {
     public static final byte TYPE_ALERTOR = 0x03;  //报警器
     public static final byte TYPE_LEDS = 0x04;  //LED灯带
     public static final byte TYPE_CORRIDOR_LED = 0x05;  //LED灯带
-    public static final byte TYPE_ADJUSTABLE_LED = 0x05;  //可调灯
+//    public static final byte TYPE_ADJUSTABLE_LED = 0x05;  //可调灯
 
     public ModbusParser() {
 
@@ -25,10 +27,10 @@ public class ModbusParser {
      * @param onOrOff
      * @return
      */
-    public byte[] getControlOrder(byte sensorType, byte onOrOff) {
+    public byte[] controlOrder(byte sensorType, byte onOrOff) {
         byte[] b = new byte[12];
         b[0] = 0x7e;  //数据头
-        b[1] = 0x20;  //cmd
+        b[1] = 0x10;  //cmd
         b[2] = 0x11;  //src addrL
         b[3] = 0x11;  //src addrH
         b[4] = 0x02;  //dest addrL
@@ -37,8 +39,10 @@ public class ModbusParser {
         b[7] = sensorType;  //type
         b[8] = 0x01;  //length
         b[9] = onOrOff;  //  data
-        b[10] = (byte)(0xff&0xff); //crc1
-        b[11] = (byte)(0x7e&0xff); //crc2
+        byte[] crc = new byte[2];
+        Utility.get_crc16(b, 8, crc);
+        b[10] = crc[0]; //crc1
+        b[11] = crc[1]; //crc2
         return b;
     }
 
@@ -47,18 +51,20 @@ public class ModbusParser {
      * @param sensorType
      * @return
      */
-    public byte[] queryStatusOrder(byte sensorType) {
+    public byte[] controlStatusOrder(byte sensorType) {
         byte[] b = new byte[10];
         b[0] = 0x7e;
-        b[1] = 0x20;
+        b[1] = 0x10;
         b[2] = 0x11;
         b[3] = 0x11;
         b[4] = 0x01;
         b[5] = 0x00;
         b[6] = 0x10;
         b[7] = sensorType;
-        b[8] = (byte) (0xcc & 0xff);
-        b[9] = (byte) (0x01 & 0xff);
+        byte[] crc = new byte[2];
+        Utility.get_crc16(b, 8, crc);
+        b[8] = crc[0];
+        b[9] = crc[1];
         return b;
     }
 
@@ -73,15 +79,4 @@ public class ModbusParser {
         return command.length > 0 ? command[9] : status;
     }
 
-    public static String bytesToHexString(byte[] data) {
-        String hexStr = "";
-        for (int i = 0; i < data.length; i++) {
-            String hex = Integer.toHexString(data[i] & 0xff);
-            if (hex.length() == 1) {
-                hex = "0" + hex;
-            }
-            hexStr += hex;
-        }
-        return hexStr;
-    }
 }

@@ -36,12 +36,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Context context;
-    private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     ViewPager mian_viewpager;
     List<View> views = new ArrayList<>();
     private String tag;
-    private ImageButton setting_imgbtn;
-    private ImageButtonWithText user_head_portrait_img;
+//    private ImageButton setting_imgbtn;
+//    private ImageButtonWithText user_head_portrait_img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -186,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    @Override
+/*    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case GET_USER_HEAD_PORTRAIT_CODE:
@@ -198,5 +197,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
+    }*/
 }

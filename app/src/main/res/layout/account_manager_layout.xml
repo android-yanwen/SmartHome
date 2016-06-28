@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:longClickable="true"
             android:background="@mipmap/ic_launcher"/>
         <TextView
             android:layout_below="@id/user_icon_img"

@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gta.smart.entrywindow.EntryAppWindow;
@@ -20,8 +22,10 @@ import com.gta.smart.entrywindow.LoadingWin;
  * Created by Administrator on 2016/6/12.
  */
 public class SettingClass extends AppCompatActivity {
+    private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     private Context context;
     private TextView id_real_name_tv;
+    private ImageView user_icon_img;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,14 @@ public class SettingClass extends AppCompatActivity {
 
     private void setupView() {
         id_real_name_tv = (TextView) findViewById(R.id.id_real_name_tv);
+        user_icon_img = (ImageView) findViewById(R.id.user_icon_img);
+        user_icon_img.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startActivityForResult(new Intent(context, SelectPicPopupWindow.class), GET_USER_HEAD_PORTRAIT_CODE);
+                return true;
+            }
+        });
     }
 
     @Override
@@ -125,5 +137,18 @@ public class SettingClass extends AppCompatActivity {
                 startActivity(new Intent(context, EntryAppWindow.class));
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case GET_USER_HEAD_PORTRAIT_CODE:
+                if (resultCode == RESULT_OK) {
+                    UserHeadPortait userHead = data.getExtras().getParcelable("UserHeadPortrait");
+                    user_icon_img.setImageBitmap(userHead.userIcon);
+                }
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

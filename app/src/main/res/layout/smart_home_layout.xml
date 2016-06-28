@@ -225,6 +225,8 @@
                 android:layout_centerVertical="true"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
+                android:max="100"
+                android:background="@android:color/transparent"
                 android:progressDrawable="@drawable/seekbar_define_color_style"
                 android:thumb="@drawable/seekbar_thumb"/>
         </RelativeLayout>
@@ -235,7 +237,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
+            android:padding="10dp"
             android:clickable="true"
             android:background="@drawable/item_selector">
             <ImageView
@@ -261,6 +263,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:max="100"
+                android:background="@android:color/transparent"
                 android:progressDrawable="@drawable/seekbar_define_color_style"
                 android:thumb="@drawable/seekbar_thumb"/>
         </RelativeLayout>

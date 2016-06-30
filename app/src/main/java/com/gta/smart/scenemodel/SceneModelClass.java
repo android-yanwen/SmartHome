@@ -3,6 +3,7 @@ package com.gta.smart.scenemodel;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -48,6 +49,9 @@ public class SceneModelClass extends AppCompatActivity implements View.OnClickLi
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                break;
+            case R.id.scene_add_model:
+                startActivity(new Intent(SceneModelClass.this, SceneModelAdd.class));
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -42,7 +42,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:button="@null"
-                android:background="@drawable/scene_cancel_apply_icon"/>
+                android:background="@drawable/scene_checkbox_bk"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/leave_home_rl"
@@ -71,7 +71,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:button="@null"
-                android:background="@drawable/scene_cancel_apply_icon" />
+                android:background="@drawable/scene_checkbox_bk" />
         </RelativeLayout>
     </LinearLayout>
 </com.handmark.pulltorefresh.library.PullToRefreshScrollView>

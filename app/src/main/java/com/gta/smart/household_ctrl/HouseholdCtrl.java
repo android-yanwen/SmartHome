@@ -82,7 +82,7 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
                     public void onTaskFinish(String result) {
                         mProgressDialog.dismiss();
                         startActivity(new Intent(HouseholdCtrl.this, InfraredCtrl.class));
-                        HouseholdCtrl.this.overridePendingTransition(R.anim.translate, R.anim.windowout);
+                        HouseholdCtrl.this.overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
                     }
                 });
                 InternetRequest.RequestParamsBean bean = internetRequest.new RequestParamsBean();
@@ -141,7 +141,7 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
 
     private void initView() {
         View view = getLayoutInflater().inflate(R.layout.smart_home_layout, null);
-        /*Animation animation = AnimationUtils.loadAnimation(HouseholdCtrl.this, R.anim.translate);
+        /*Animation animation = AnimationUtils.loadAnimation(HouseholdCtrl.this, R.anim.activity_from_right_to_left_in);
         view.startAnimation(animation);*/
         setContentView(view);
         infrared_ly = (RelativeLayout) view.findViewById(R.id.infrared_ly);

@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gta.smart.entrywindow.EntryAppWindow;
-import com.gta.smart.entrywindow.LoadingWin;
 
 /**
  * Created by Administrator on 2016/6/12.
@@ -53,7 +51,7 @@ public class SettingClass extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+                overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -63,7 +61,7 @@ public class SettingClass extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
-            overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+            overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
         }
         return super.onKeyDown(keyCode, event);
     }

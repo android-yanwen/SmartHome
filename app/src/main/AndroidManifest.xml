@@ -6,6 +6,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,6 +34,10 @@
             android:theme="@style/MyDialogStyleButtom"/>
         <activity android:name="com.gta.smart.entrywindow.LoadingWin"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/smart_register"
+            android:name="com.gta.smart.entrywindow.RegisterObtainVertifyCodeWin" />
+        <activity android:label="@string/smart_register"
+            android:name="com.gta.smart.entrywindow.RegisterIdentificationWin" />
         <activity
             android:label="@string/smart_ctrl"
             android:name="com.gta.smart.household_ctrl.HouseholdCtrl"/>
@@ -47,7 +54,7 @@
             android:label="@string/intelligent_safety"
             android:name="com.gta.smart.intelligentsafety.IntelligentSafetyClass"/>
         <activity
-            android:label="@string/intelligent_safety"
+            android:label="@string/scene_model"
             android:name="com.gta.smart.scenemodel.SceneModelClass"/>
         <activity
             android:label="@string/bedroom_activity"
@@ -55,6 +62,15 @@
         <activity
             android:label="@string/setting"
             android:name="com.gta.smart.smarthome.SettingClass"/>
+        <activity
+            android:label="@string/scene_model_custom"
+            android:name="com.gta.smart.scenemodel.SceneModelAdd" />
+        <activity
+            android:label="@string/scene_model_triggering_condition"
+            android:name="com.gta.smart.scenemodel.SceneModelTriggeringCondition" />
+        <activity
+            android:label="@string/scene_model_triggering_action"
+            android:name="com.gta.smart.scenemodel.SceneModelTriggeingAction" />
     </application>
 
 </manifest>

@@ -8,9 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -133,7 +131,7 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
-                overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+                overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -143,7 +141,7 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             this.finish();
-            overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+            overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
         }
         return super.onKeyDown(keyCode, event);
     }

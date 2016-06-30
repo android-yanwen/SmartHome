@@ -4,11 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -16,19 +13,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ImageButton;
 
 import com.gta.smart.entrywindow.LoadingWin;
-import com.gta.smart.household_ctrl.HouseholdCtrl;
 import com.gta.smart.household_ctrl.ViewPageAdapter;
 
 import java.util.ArrayList;
@@ -116,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 ////                Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
 ////                setting_imgbtn.startAnimation(animation);
 //                startActivity(new Intent(this, SettingClass.class));
-//                overridePendingTransition(R.anim.translate, R.anim.windowout);
+//                overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
 //                break;
             case R.id.imageView:
                 startActivity(new Intent(context, LoadingWin.class));
@@ -152,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingClass.class));
-            overridePendingTransition(R.anim.translate, R.anim.windowout);
+            overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
             return true;
         }
 

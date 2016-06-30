@@ -4,6 +4,7 @@
 
     <string name="app_name">SmartHome</string>
     <string name="action_settings">Settings</string>
+    <string name="smart_register">注册</string>
     <string name="smart_ctrl">智能家电控制</string>
     <string name="infrared_ctrl">红外控制</string>
     <string name="tv_ctrl">电视遥控</string>
@@ -17,6 +18,9 @@
     <string name="intelligent_safety">智能安防</string>
     <string name="bedroom_activity">乐铃卧室</string>
     <string name="scene_model">情景模式</string>
+    <string name="scene_model_custom">自定义情景模式</string>
+    <string name="scene_model_triggering_condition">触发条件</string>
+    <string name="scene_model_triggering_action">触发动作</string>
     <string name="setting">设置</string>
     <string name="personal_setting">个人信息设置</string>
 

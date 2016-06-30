@@ -51,7 +51,7 @@ public class OnePagerFragment extends Fragment implements View.OnClickListener{
         switch (v.getId()) {
             case R.id.homn_ctrl_btn:
                 startActivity(new Intent(getActivity(), HouseholdCtrl.class));
-//                overridePendingTransition(R.anim.translate, R.anim.windowout);
+//                overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
                 break;
             case R.id.even_monitor_btn:
                 startActivity(new Intent(getActivity(), EviromentalMonitoring.class));

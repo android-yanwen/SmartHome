@@ -38,6 +38,8 @@
             android:name="com.gta.smart.entrywindow.RegisterObtainVertifyCodeWin" />
         <activity android:label="@string/smart_register"
             android:name="com.gta.smart.entrywindow.RegisterIdentificationWin" />
+        <activity android:label="@string/smart_register"
+            android:name="com.gta.smart.entrywindow.RegisterSettingPasswordWin" />
         <activity
             android:label="@string/smart_ctrl"
             android:name="com.gta.smart.household_ctrl.HouseholdCtrl"/>

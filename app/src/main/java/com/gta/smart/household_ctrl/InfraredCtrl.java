@@ -94,9 +94,32 @@ public class InfraredCtrl extends AppCompatActivity {
     public void onClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_ctrl_layout:
-                Log.i(tag, "R.id.id_tv");
-                startActivity(new Intent(InfraredCtrl.this, TvCtrl.class));
-                InfraredCtrl.this.overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
+//                Log.i(tag, "R.id.id_tv");
+                InternetRequest internetRequest = new InternetRequest(context);
+                internetRequest.setOnAsyncTaskListener(new InternetRequest.OnAsyncTaskListener() {
+                    @Override
+                    public void onTaskStart() {
+                        progressDialog = new ProgressDialog(context);
+                        progressDialog.setMessage("Loading...");
+                        progressDialog.setCancelable(false);
+                        progressDialog.setIndeterminate(false);
+                        progressDialog.show();
+                    }
+
+                    @Override
+                    public void onTaskFinish(String result) {
+                        progressDialog.dismiss();
+                        Intent intent = new Intent(InfraredCtrl.this, TvCtrl.class);
+                        intent.putExtra("result", result);
+                        startActivity(intent);
+                        InfraredCtrl.this.overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
+//                Log.i(tag, "handlerResult:" + handlerResult.getRemoteType());
+                    }
+                });
+                InternetRequest.RequestParamsBean bean = internetRequest.new RequestParamsBean();
+                bean.userid = InternetRequest.userId;
+                String msg = new Gson().toJson(bean);
+                internetRequest.new RequestSmallK().execute(new String[]{"/User/getGeneralRemoteList", msg});
                 break;
             case R.id.air_ctrl_layout:
                 Log.i(tag, "R.id.id_ari_conditioner");

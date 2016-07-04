@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +18,8 @@ import android.widget.TextView;
 
 import com.gta.smart.entrywindow.EntryAppWindow;
 
+import java.io.File;
+
 /**
  * Created by Administrator on 2016/6/12.
  */
@@ -23,6 +27,7 @@ public class SettingClass extends AppCompatActivity {
     private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     private Context context;
     private TextView id_real_name_tv;
+    private static final String filePath = "/sdcard/myHead/head.png";
     private ImageView user_icon_img;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +42,12 @@ public class SettingClass extends AppCompatActivity {
     private void setupView() {
         id_real_name_tv = (TextView) findViewById(R.id.id_real_name_tv);
         user_icon_img = (ImageView) findViewById(R.id.user_icon_img);
+        // 读取并设置用户头像
+        File file = new File(filePath);
+        if (file.exists()) {
+            Bitmap bm = BitmapFactory.decodeFile(filePath);
+            user_icon_img.setImageBitmap(bm);
+        }
         user_icon_img.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

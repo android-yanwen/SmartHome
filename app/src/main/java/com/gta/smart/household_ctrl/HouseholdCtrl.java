@@ -71,7 +71,7 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onTaskStart() {
                         mProgressDialog = new ProgressDialog(context);
-                        mProgressDialog.setTitle("Request remote data");
+//                        mProgressDialog.setTitle("Request remote data");
                         mProgressDialog.setMessage("Loading.....");
                         mProgressDialog.setIndeterminate(false);
                         mProgressDialog.setCancelable(false);

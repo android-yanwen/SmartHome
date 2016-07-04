@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,18 +17,22 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.gta.smart.entrywindow.LoadingWin;
 import com.gta.smart.household_ctrl.ViewPageAdapter;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Context context;
     ViewPager mian_viewpager;
+    private ImageView user_head_icon_view;
     List<View> views = new ArrayList<>();
-    private String tag;
+    private String tag = "MainActivity";
+    private static String filePath = "/sdcard/myHead/head.png";
 //    private ImageButton setting_imgbtn;
 //    private ImageButtonWithText user_head_portrait_img;
     @Override
@@ -84,18 +89,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
-//        setting_imgbtn = (ImageButton) findViewById(R.id.setting_imgbtn);
-//        user_head_portrait_img = (ImageButtonWithText) findViewById(R.id.user_head_portrait_img);
-//        // 长按更改用户头像
-//        user_head_portrait_img.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                Log.i(tag, "onLongClick()");
-//                startActivityForResult(new Intent(context, SelectPicPopupWindow.class), GET_USER_HEAD_PORTRAIT_CODE);
-//                return true;
-//            }
-//        });
-
+        // 获取用户头像
+        View view = navigationView.getHeaderView(0);
+        user_head_icon_view = (ImageView) view.findViewById(R.id.user_head_icon_view);
+        if (new File(filePath).exists()) {
+            user_head_icon_view.setImageBitmap(BitmapFactory.decodeFile(filePath));
+        } else {
+            user_head_icon_view.setImageResource(R.drawable.user_portrait_pic);
+        }
     }
 
     public void onClicked(View view) {
@@ -107,10 +108,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                startActivity(new Intent(this, SettingClass.class));
 //                overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
 //                break;
-            case R.id.imageView:
-                startActivity(new Intent(context, LoadingWin.class));
-                finish();
-                break;
+//            case R.id.user_head_icon_view:
+//                startActivity(new Intent(context, LoadingWin.class));
+//                finish();
+//                break;
 //            case R.id.user_head_portrait_img:
 //
 //                break;

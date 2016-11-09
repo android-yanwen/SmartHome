@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +13,22 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gta.smart.entrywindow.EntryAppWindow;
-import com.gta.smart.entrywindow.LoadingWin;
+
+import java.io.File;
 
 /**
  * Created by Administrator on 2016/6/12.
  */
 public class SettingClass extends AppCompatActivity {
+    private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     private Context context;
     private TextView id_real_name_tv;
+    private static final String filePath = "/sdcard/myHead/head.png";
+    private ImageView user_icon_img;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +41,20 @@ public class SettingClass extends AppCompatActivity {
 
     private void setupView() {
         id_real_name_tv = (TextView) findViewById(R.id.id_real_name_tv);
+        user_icon_img = (ImageView) findViewById(R.id.user_icon_img);
+        // 读取并设置用户头像
+        File file = new File(filePath);
+        if (file.exists()) {
+            Bitmap bm = BitmapFactory.decodeFile(filePath);
+            user_icon_img.setImageBitmap(bm);
+        }
+        user_icon_img.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startActivityForResult(new Intent(context, SelectPicPopupWindow.class), GET_USER_HEAD_PORTRAIT_CODE);
+                return true;
+            }
+        });
     }
 
     @Override
@@ -41,7 +62,7 @@ public class SettingClass extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+                overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -51,7 +72,7 @@ public class SettingClass extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish();
-            overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+            overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
         }
         return super.onKeyDown(keyCode, event);
     }
@@ -125,5 +146,18 @@ public class SettingClass extends AppCompatActivity {
                 startActivity(new Intent(context, EntryAppWindow.class));
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case GET_USER_HEAD_PORTRAIT_CODE:
+                if (resultCode == RESULT_OK) {
+                    UserHeadPortait userHead = data.getExtras().getParcelable("UserHeadPortrait");
+                    user_icon_img.setImageBitmap(userHead.userIcon);
+                }
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

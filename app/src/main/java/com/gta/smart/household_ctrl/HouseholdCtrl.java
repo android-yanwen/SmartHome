@@ -19,6 +19,7 @@ import com.gta.smart.slideswitch.SlideSwitch;
 import com.gta.smart.socket_utility.TcpSocketUtility;
 import com.gta.smart.httputility.InternetRequest;
 import com.gta.smart.smarthome.R;
+import com.gta.smart.utility.Utility;
 
 /**
  * Created by Administrator on 2016/5/25.
@@ -70,7 +71,7 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onTaskStart() {
                         mProgressDialog = new ProgressDialog(context);
-                        mProgressDialog.setTitle("Request remote data");
+//                        mProgressDialog.setTitle("Request remote data");
                         mProgressDialog.setMessage("Loading.....");
                         mProgressDialog.setIndeterminate(false);
                         mProgressDialog.setCancelable(false);
@@ -81,7 +82,7 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
                     public void onTaskFinish(String result) {
                         mProgressDialog.dismiss();
                         startActivity(new Intent(HouseholdCtrl.this, InfraredCtrl.class));
-                        HouseholdCtrl.this.overridePendingTransition(R.anim.translate, R.anim.windowout);
+                        HouseholdCtrl.this.overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
                     }
                 });
                 InternetRequest.RequestParamsBean bean = internetRequest.new RequestParamsBean();
@@ -140,7 +141,7 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
 
     private void initView() {
         View view = getLayoutInflater().inflate(R.layout.smart_home_layout, null);
-        /*Animation animation = AnimationUtils.loadAnimation(HouseholdCtrl.this, R.anim.translate);
+        /*Animation animation = AnimationUtils.loadAnimation(HouseholdCtrl.this, R.anim.activity_from_right_to_left_in);
         view.startAnimation(animation);*/
         setContentView(view);
         infrared_ly = (RelativeLayout) view.findViewById(R.id.infrared_ly);
@@ -154,15 +155,19 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
         corridor_ly = (RelativeLayout) findViewById(R.id.corridor_ly);
         corridor_ly.setOnClickListener(this);
 
-        id_humidifier_slide = (SlideSwitch) findViewById(R.id.id_humidifier_slide);
-        id_humidifier_slide.setOnStateChangedListener(new SlideSwitch.OnStateChangedListener() {
-            @Override
-            public void onStateChanged(boolean state) {
-
-            }
-        });
         id_leds_slide = (SlideSwitch) findViewById(R.id.id_leds_slide);
         id_leds_slide.setOnStateChangedListener(new SlideSwitch.OnStateChangedListener() {
+            @Override
+            public void onStateChanged(boolean state) {
+                if (state) {
+                    controlOnOrOff(ModbusParser.TYPE_LEDS, ModbusParser.SWITCH_OFF);
+                } else {
+                    controlOnOrOff(ModbusParser.TYPE_LEDS, ModbusParser.SWITCH_ON);
+                }
+            }
+        });
+        id_humidifier_slide = (SlideSwitch) findViewById(R.id.id_humidifier_slide);
+        id_humidifier_slide.setOnStateChangedListener(new SlideSwitch.OnStateChangedListener() {
             @Override
             public void onStateChanged(boolean state) {
 
@@ -201,9 +206,9 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
-        judgeOnOrOffTheControl(ModbusParser.TYPE_HUMIDIFIER);
-        judgeOnOrOffTheControl(ModbusParser.TYPE_LEDS);
-        judgeOnOrOffTheControl(ModbusParser.TYPE_CORRIDOR_LED);
+        judgeOnOrOffTheController(ModbusParser.TYPE_HUMIDIFIER);
+        judgeOnOrOffTheController(ModbusParser.TYPE_LEDS);
+        judgeOnOrOffTheController(ModbusParser.TYPE_CORRIDOR_LED);
 
     }
 
@@ -221,8 +226,8 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
      * 判断控制器的状态 on or off
      * @param ctrlName
      */
-    private void judgeOnOrOffTheControl(final byte ctrlName) {
-        new TcpSocketUtility().requestData(new ModbusParser().queryStatusOrder(ctrlName),
+    private void judgeOnOrOffTheController(final byte ctrlName) {
+        new TcpSocketUtility().requestData(new ModbusParser().controlStatusOrder(ctrlName),
                 new TcpSocketUtility.SocketDataHandle() {
                     @Override
                     public void getData(byte[] data) {
@@ -231,11 +236,26 @@ public class HouseholdCtrl extends AppCompatActivity implements View.OnClickList
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        Log.i(tag, ModbusParser.bytesToHexString(data));
+                        Log.i(tag, Utility.bytesToHexString(data));
                         Message message = myHandler.obtainMessage();
                         message.what = ctrlName;
                         message.obj = new ModbusParser().getControlStatus(data);
                         myHandler.sendMessage(message);
+                    }
+                });
+    }
+
+    /**
+     * 控制控制器的开关
+     * @param type
+     * @param onOroff
+     */
+    private void controlOnOrOff(byte type, byte onOroff) {
+        new TcpSocketUtility().requestData(new ModbusParser().controlOrder(type, onOroff),
+                new TcpSocketUtility.SocketDataHandle() {
+                    @Override
+                    public void getData(byte[] data) {
+
                     }
                 });
     }

@@ -8,9 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -29,9 +27,9 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
     private Context context;
     private ProgressBar progressbar;
     private String tag;
-    private ProgressDialog mProgressDialog;
+//    private ProgressDialog mProgressDialog;
     private HandlerResult handlerResult;
-    private RelativeLayout infrared_keyboard_layout;
+//    private RelativeLayout infrared_keyboard_layout;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +38,8 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
         tag = getLocalClassName();
         ActionBar actionBar = TvCtrl.this.getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        // 将获取到的电视遥控红外列表传递给HandlerResult类进行解析
+        handlerResult = new HandlerResult(getIntent().getStringExtra("result"));
         initView();
 //        ActionBar actionBar = getActionBar();
 
@@ -48,7 +48,7 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-        InternetRequest internetRequest = new InternetRequest(context);
+        /*InternetRequest internetRequest = new InternetRequest(context);
         internetRequest.setOnAsyncTaskListener(new InternetRequest.OnAsyncTaskListener() {
             @Override
             public void onTaskStart() {
@@ -70,7 +70,7 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
         InternetRequest.RequestParamsBean bean = internetRequest.new RequestParamsBean();
         bean.userid = InternetRequest.userId;
         String msg = new Gson().toJson(bean);
-        internetRequest.new RequestSmallK().execute(new String[]{"/User/getGeneralRemoteList", msg});
+        internetRequest.new RequestSmallK().execute(new String[]{"/User/getGeneralRemoteList", msg});*/
     }
 
     /**
@@ -133,7 +133,7 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
-                overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+                overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -143,7 +143,7 @@ public class TvCtrl extends AppCompatActivity implements View.OnClickListener {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             this.finish();
-            overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+            overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
         }
         return super.onKeyDown(keyCode, event);
     }

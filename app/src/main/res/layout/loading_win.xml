@@ -22,7 +22,7 @@
             android:id="@+id/id_pwd_edit"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_weight="6"
+            android:layout_weight="1"
             android:background="@drawable/load_edittext__shape"
             android:padding="10dp"
             android:maxLines="1"
@@ -32,8 +32,7 @@
             android:hint="请输入密码"/>
         <EditText
             android:id="@+id/id_disp_pwd_edit"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:background="@drawable/load_edittext__shape"
             android:padding="10dp"

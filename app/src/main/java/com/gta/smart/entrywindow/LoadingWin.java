@@ -42,11 +42,11 @@ public class LoadingWin extends AppCompatActivity implements View.OnClickListene
             case R.id.id_disp_pwd_edit:
                 Drawable drawable/* = getDrawable(R.drawable.show)*/;
 //                Drawable[] drawables = id_disp_pwd_edit.getCompoundDrawables();  //获取当前的drawable[2] (drawableEnd)
-                if (isDispPwd) { //显示密码
+                if (isDispPwd) { /* 显示密码 */
                     isDispPwd = false;
                     drawable = getResources().getDrawable(R.drawable.show_2);
                     id_pwd_edit.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                } else { //隐藏密码
+                } else { /* 隐藏密码 */
                     isDispPwd = true;
                     drawable = getResources().getDrawable(R.drawable.show);
                     id_pwd_edit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);

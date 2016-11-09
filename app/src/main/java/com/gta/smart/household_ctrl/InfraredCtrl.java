@@ -19,10 +19,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.gta.smart.httputility.HandlerResult;
-import com.gta.smart.httputility.HttpUtility;
 import com.gta.smart.httputility.InternetRequest;
 import com.gta.smart.slideswitch.SlideSwitch;
-import com.gta.smart.smarthome.ImageButtonWithText;
 import com.gta.smart.smarthome.R;
 
 /**
@@ -96,9 +94,32 @@ public class InfraredCtrl extends AppCompatActivity {
     public void onClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_ctrl_layout:
-                Log.i(tag, "R.id.id_tv");
-                startActivity(new Intent(InfraredCtrl.this, TvCtrl.class));
-                InfraredCtrl.this.overridePendingTransition(R.anim.translate, R.anim.windowout);
+//                Log.i(tag, "R.id.id_tv");
+                InternetRequest internetRequest = new InternetRequest(context);
+                internetRequest.setOnAsyncTaskListener(new InternetRequest.OnAsyncTaskListener() {
+                    @Override
+                    public void onTaskStart() {
+                        progressDialog = new ProgressDialog(context);
+                        progressDialog.setMessage("Loading...");
+                        progressDialog.setCancelable(false);
+                        progressDialog.setIndeterminate(false);
+                        progressDialog.show();
+                    }
+
+                    @Override
+                    public void onTaskFinish(String result) {
+                        progressDialog.dismiss();
+                        Intent intent = new Intent(InfraredCtrl.this, TvCtrl.class);
+                        intent.putExtra("result", result);
+                        startActivity(intent);
+                        InfraredCtrl.this.overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
+//                Log.i(tag, "handlerResult:" + handlerResult.getRemoteType());
+                    }
+                });
+                InternetRequest.RequestParamsBean bean = internetRequest.new RequestParamsBean();
+                bean.userid = InternetRequest.userId;
+                String msg = new Gson().toJson(bean);
+                internetRequest.new RequestSmallK().execute(new String[]{"/User/getGeneralRemoteList", msg});
                 break;
             case R.id.air_ctrl_layout:
                 Log.i(tag, "R.id.id_ari_conditioner");
@@ -125,7 +146,7 @@ public class InfraredCtrl extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
-                overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+                overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -136,7 +157,7 @@ public class InfraredCtrl extends AppCompatActivity {
         if (KeyEvent.KEYCODE_BACK == keyCode) {
 //            Log.i(tag, "onKeyDown");
             finish();
-            overridePendingTransition(R.anim.activity_exit_2, R.anim.activity_exit_1);
+            overridePendingTransition(R.anim.activity_from_left_to_right_in, R.anim.activity_from_left_to_right_out);
         }
         return super.onKeyDown(keyCode, event);
     }

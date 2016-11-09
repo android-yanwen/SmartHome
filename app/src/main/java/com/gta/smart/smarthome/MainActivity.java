@@ -4,11 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -16,32 +14,27 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.gta.smart.entrywindow.LoadingWin;
-import com.gta.smart.household_ctrl.HouseholdCtrl;
 import com.gta.smart.household_ctrl.ViewPageAdapter;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private Context context;
-    private static final int GET_USER_HEAD_PORTRAIT_CODE = 1;
     ViewPager mian_viewpager;
+    private ImageView user_head_icon_view;
     List<View> views = new ArrayList<>();
-    private String tag;
-    private ImageButton setting_imgbtn;
-    private ImageButtonWithText user_head_portrait_img;
+    private String tag = "MainActivity";
+    private static String filePath = "/sdcard/myHead/head.png";
+//    private ImageButton setting_imgbtn;
+//    private ImageButtonWithText user_head_portrait_img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,18 +89,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
-//        setting_imgbtn = (ImageButton) findViewById(R.id.setting_imgbtn);
-//        user_head_portrait_img = (ImageButtonWithText) findViewById(R.id.user_head_portrait_img);
-//        // 长按更改用户头像
-//        user_head_portrait_img.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                Log.i(tag, "onLongClick()");
-//                startActivityForResult(new Intent(context, SelectPicPopupWindow.class), GET_USER_HEAD_PORTRAIT_CODE);
-//                return true;
-//            }
-//        });
-
+        // 获取用户头像
+        View view = navigationView.getHeaderView(0);
+        user_head_icon_view = (ImageView) view.findViewById(R.id.user_head_icon_view);
+        if (new File(filePath).exists()) {
+            user_head_icon_view.setImageBitmap(BitmapFactory.decodeFile(filePath));
+        } else {
+            user_head_icon_view.setImageResource(R.drawable.user_portrait_pic);
+        }
     }
 
     public void onClicked(View view) {
@@ -117,12 +106,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 ////                Animation animation = AnimationUtils.loadAnimation(context, R.anim.rotate);
 ////                setting_imgbtn.startAnimation(animation);
 //                startActivity(new Intent(this, SettingClass.class));
-//                overridePendingTransition(R.anim.translate, R.anim.windowout);
+//                overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
 //                break;
-            case R.id.imageView:
-                startActivity(new Intent(context, LoadingWin.class));
-                finish();
-                break;
+//            case R.id.user_head_icon_view:
+//                startActivity(new Intent(context, LoadingWin.class));
+//                finish();
+//                break;
 //            case R.id.user_head_portrait_img:
 //
 //                break;
@@ -153,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingClass.class));
-            overridePendingTransition(R.anim.translate, R.anim.windowout);
+            overridePendingTransition(R.anim.activity_from_right_to_left_in, R.anim.activity_from_right_to_left_out);
             return true;
         }
 
@@ -186,7 +175,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    @Override
+/*    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case GET_USER_HEAD_PORTRAIT_CODE:
@@ -198,5 +187,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
+    }*/
 }
